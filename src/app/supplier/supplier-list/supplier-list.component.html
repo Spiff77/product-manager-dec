@@ -1,0 +1,6 @@
+<app-title  primaryColor="green" secondaryColor="lightyellow">Supplier List</app-title>
+<div *ngIf="selectedSupplier" appSelectedBox>
+  <a href="#" (click)="close()" >x</a> You have selected {{selectedSupplier?.companyName}}
+</div>
+<app-supplier-item [supplier]="supplier" (evt)="receiveChildrenEvt($event)" *ngFor="let supplier of suppliers"></app-supplier-item>
+<a [routerLink]="['/suppliers/add']">ADD</a>
